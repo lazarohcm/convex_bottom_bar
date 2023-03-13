@@ -16,7 +16,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'transition_container_builder.dart';
+import 'package:convex_bottom_bar/src/style/transition_container_builder.dart';
 
 /// Add controller with provided transition api, such as [SlideTransition], [ScaleTransition].
 class TransitionContainer extends StatefulWidget {
@@ -31,35 +31,41 @@ class TransitionContainer extends StatefulWidget {
 
   /// Wrap a widget with scale transition.
   TransitionContainer.scale({
+    Key? key,
     required Widget child,
     required Curve curve,
     this.duration,
     this.data,
-  }) : builder = ScaleBuilder(curve: curve, child: child);
+  })  : builder = ScaleBuilder(curve: curve, child: child),
+        super(key: key);
 
   /// Wrap a widget with slide transition.
   TransitionContainer.slide({
+    Key? key,
     required Widget child,
     required Curve curve,
     this.duration,
     bool reverse = false,
     this.data,
-  }) : builder = SlideBuilder(curve: curve, child: child, reverse: reverse);
+  })  : builder = SlideBuilder(curve: curve, child: child, reverse: reverse),
+        super(key: key);
 
   /// Wrap a widget with flip transition.
   TransitionContainer.flip({
+    Key? key,
     required Widget topChild,
     required Widget bottomChild,
     required Curve curve,
     required double height,
     this.duration,
     this.data,
-  }) : builder = FlipBuilder(
+  })  : builder = FlipBuilder(
           height,
           curve: curve,
           topChild: topChild,
           bottomChild: bottomChild,
-        );
+        ),
+        super(key: key);
 
   @override
   _State createState() {
@@ -80,7 +86,7 @@ class _State extends State<TransitionContainer> with TickerProviderStateMixin {
   void _setAnimation() {
     final controller = AnimationController(
       vsync: this,
-      duration: widget.duration ?? Duration(milliseconds: 150),
+      duration: widget.duration ?? const Duration(milliseconds: 150),
     )..addListener(() => setState(() {}));
     controller.forward();
     animation = widget.builder.animation(controller);

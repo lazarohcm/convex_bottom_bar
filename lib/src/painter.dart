@@ -16,8 +16,8 @@
 
 import 'package:flutter/material.dart';
 
-import 'convex_shape.dart';
-import 'reused_gradient.dart';
+import 'package:convex_bottom_bar/src/convex_shape.dart';
+import 'package:convex_bottom_bar/src/reused_gradient.dart';
 
 /// Custom painter to draw the [ConvexNotchedRectangle] into canvas.
 class ConvexPainter extends CustomPainter {

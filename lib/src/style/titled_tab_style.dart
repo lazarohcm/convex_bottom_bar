@@ -16,10 +16,10 @@
 
 import 'package:flutter/material.dart';
 
-import '../item.dart';
-import 'blend_image_icon.dart';
-import 'inner_builder.dart';
-import 'transition_container.dart';
+import 'package:convex_bottom_bar/src/item.dart';
+import 'package:convex_bottom_bar/src/style/blend_image_icon.dart';
+import 'package:convex_bottom_bar/src/style/inner_builder.dart';
+import 'package:convex_bottom_bar/src/style/transition_container.dart';
 
 /// Tab icon, text animated with pop transition.
 class TitledTabStyle extends InnerBuilder {
@@ -54,7 +54,7 @@ class TitledTabStyle extends InnerBuilder {
     if (active) {
       return TransitionContainer.slide(
         data: index,
-        duration: Duration(milliseconds: 200),
+        duration: const Duration(milliseconds: 200),
         curve: curve,
         child: Container(
           // necessary otherwise the badge will not large enough

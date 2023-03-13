@@ -16,11 +16,11 @@
 
 import 'package:flutter/material.dart';
 
-import '../../convex_bottom_bar.dart';
-import '../item.dart';
-import 'blend_image_icon.dart';
-import 'inner_builder.dart';
-import 'transition_container.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+import 'package:convex_bottom_bar/src/item.dart';
+import 'package:convex_bottom_bar/src/style/blend_image_icon.dart';
+import 'package:convex_bottom_bar/src/style/inner_builder.dart';
+import 'package:convex_bottom_bar/src/style/transition_container.dart';
 
 /// Convex shape is moved after selection.
 class ReactCircleTabStyle extends InnerBuilder {
@@ -79,7 +79,7 @@ class ReactCircleTabStyle extends InnerBuilder {
       children.add(Text(item.title ?? '', style: textStyle));
     }
     return Container(
-      padding: EdgeInsets.only(bottom: 2),
+      padding: const EdgeInsets.only(bottom: 2),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: children,

@@ -92,7 +92,7 @@ class ConvexButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(alignment: Alignment.bottomCenter, children: <Widget>[
-      Container(
+      SizedBox(
         height: thickness ?? _DEFAULT_THICKNESS,
         width: double.infinity,
         child: CustomPaint(

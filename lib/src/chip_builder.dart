@@ -17,7 +17,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'interface.dart';
+import 'package:convex_bottom_bar/src/interface.dart';
 
 /// Simple badge with num inside.
 class DefaultChipBuilder extends ChipBuilder {
@@ -50,8 +50,8 @@ class DefaultChipBuilder extends ChipBuilder {
   });
 
   @override
-  Widget build(_, child, i, active) {
-    var chip = chips[i];
+  Widget build(context, child, index, active) {
+    var chip = chips[index];
     if (chip == null || chip == '') {
       return child;
     }

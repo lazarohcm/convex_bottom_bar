@@ -16,9 +16,9 @@
 
 import 'package:flutter/material.dart';
 
-import '../item.dart';
-import 'blend_image_icon.dart';
-import 'inner_builder.dart';
+import 'package:convex_bottom_bar/src/item.dart';
+import 'package:convex_bottom_bar/src/style/blend_image_icon.dart';
+import 'package:convex_bottom_bar/src/style/inner_builder.dart';
 
 /// Convex shape is fixed center.
 class FixedTabStyle extends InnerBuilder {
@@ -43,7 +43,7 @@ class FixedTabStyle extends InnerBuilder {
     if (index == convexIndex) {
       var item = items[convexIndex];
       return Container(
-        padding: EdgeInsets.only(bottom: 2),
+        padding: const EdgeInsets.only(bottom: 2),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
@@ -68,7 +68,7 @@ class FixedTabStyle extends InnerBuilder {
         ? <Widget>[icon]
         : <Widget>[icon, Text(item.title ?? '', style: textStyle)];
     return Container(
-      padding: EdgeInsets.only(bottom: 2),
+      padding: const EdgeInsets.only(bottom: 2),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: children,

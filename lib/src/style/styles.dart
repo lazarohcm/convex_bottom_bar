@@ -16,16 +16,16 @@
 
 import 'package:flutter/cupertino.dart';
 
-import '../bar.dart';
-import '../interface.dart';
-import '../item.dart';
-import 'fixed_circle_tab_style.dart';
-import 'fixed_tab_style.dart';
-import 'flip_tab_style.dart';
-import 'react_circle_tab_style.dart';
-import 'react_tab_style.dart';
-import 'textin_tab_style.dart';
-import 'titled_tab_style.dart';
+import 'package:convex_bottom_bar/src/bar.dart';
+import 'package:convex_bottom_bar/src/interface.dart';
+import 'package:convex_bottom_bar/src/item.dart';
+import 'package:convex_bottom_bar/src/style/fixed_circle_tab_style.dart';
+import 'package:convex_bottom_bar/src/style/fixed_tab_style.dart';
+import 'package:convex_bottom_bar/src/style/flip_tab_style.dart';
+import 'package:convex_bottom_bar/src/style/react_circle_tab_style.dart';
+import 'package:convex_bottom_bar/src/style/react_tab_style.dart';
+import 'package:convex_bottom_bar/src/style/textin_tab_style.dart';
+import 'package:convex_bottom_bar/src/style/titled_tab_style.dart';
 
 /// Factory method to return the [DelegateBuilder] for each [TabStyle].
 DelegateBuilder supportedStyle(

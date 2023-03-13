@@ -16,10 +16,10 @@
 
 import 'package:flutter/cupertino.dart';
 
-import '../bar.dart';
-import '../interface.dart';
-import '../item.dart';
-import 'internal_style_config.dart';
+import 'package:convex_bottom_bar/src/bar.dart';
+import 'package:convex_bottom_bar/src/interface.dart';
+import 'package:convex_bottom_bar/src/item.dart';
+import 'package:convex_bottom_bar/src/style/internal_style_config.dart';
 
 /// Simple builder which extend [DelegateBuilder] to provide some necessary config.
 abstract class InnerBuilder extends DelegateBuilder {

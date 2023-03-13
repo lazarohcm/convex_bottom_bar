@@ -18,16 +18,16 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-import 'chip_builder.dart';
-import 'interface.dart';
-import 'item.dart';
-import 'painter.dart';
-import 'stack.dart' as extend;
-import 'style/fixed_circle_tab_style.dart';
-import 'style/fixed_tab_style.dart';
-import 'style/react_circle_tab_style.dart';
-import 'style/react_tab_style.dart';
-import 'style/styles.dart';
+import 'package:convex_bottom_bar/src/chip_builder.dart';
+import 'package:convex_bottom_bar/src/interface.dart';
+import 'package:convex_bottom_bar/src/item.dart';
+import 'package:convex_bottom_bar/src/painter.dart';
+import 'package:convex_bottom_bar/src/stack.dart' as extend;
+import 'package:convex_bottom_bar/src/style/fixed_circle_tab_style.dart';
+import 'package:convex_bottom_bar/src/style/fixed_tab_style.dart';
+import 'package:convex_bottom_bar/src/style/react_circle_tab_style.dart';
+import 'package:convex_bottom_bar/src/style/react_tab_style.dart';
+import 'package:convex_bottom_bar/src/style/styles.dart';
 
 /// Default size of the curve line.
 const double CONVEX_SIZE = 80;
@@ -330,8 +330,8 @@ class ConvexAppBar extends StatefulWidget {
         badge,
         textColor: badgeTextColor ?? Colors.white,
         badgeColor: badgeColor ?? Colors.redAccent,
-        padding: badgePadding ?? EdgeInsets.only(left: 4, right: 4),
-        margin: badgeMargin ?? EdgeInsets.only(top: 10, right: 10),
+        padding: badgePadding ?? const EdgeInsets.only(left: 4, right: 4),
+        margin: badgeMargin ?? const EdgeInsets.only(top: 10, right: 10),
         borderRadius: badgeBorderRadius ?? 20,
       );
     }
@@ -369,6 +369,7 @@ class ConvexAppBar extends StatefulWidget {
 class ConvexAppBarState extends State<ConvexAppBar>
     with TickerProviderStateMixin {
   int? _currentIndex;
+
   /// get index
   int? get currentIndex => _currentIndex;
   int _warpUnderwayCount = 0;
@@ -553,7 +554,7 @@ class ConvexAppBarState extends State<ConvexAppBar>
       clipBehavior: Clip.none,
       alignment: Alignment.bottomCenter,
       children: <Widget>[
-        Container(
+        SizedBox(
           height: height,
           width: width,
           child: CustomPaint(
@@ -667,7 +668,7 @@ class StyleProvider extends InheritedWidget {
   ///
   ///  * [ConvexAppBar]
   ///  * [StyleHook]
-  StyleProvider({Key? key, required this.style, required Widget child})
+  const StyleProvider({Key? key, required this.style, required Widget child})
       : super(key: key, child: child);
 
   /// Get instance of style provider, can be null if you're not providing one.

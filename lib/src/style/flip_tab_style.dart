@@ -16,10 +16,10 @@
 
 import 'package:flutter/material.dart';
 
-import '../item.dart';
-import 'blend_image_icon.dart';
-import 'inner_builder.dart';
-import 'transition_container.dart';
+import 'package:convex_bottom_bar/src/item.dart';
+import 'package:convex_bottom_bar/src/style/blend_image_icon.dart';
+import 'package:convex_bottom_bar/src/style/inner_builder.dart';
+import 'package:convex_bottom_bar/src/style/transition_container.dart';
 
 /// Tab item are flipped when click.
 class FlipTabStyle extends InnerBuilder {
@@ -54,22 +54,20 @@ class FlipTabStyle extends InnerBuilder {
       }
       return TransitionContainer.flip(
         data: index,
-        duration: Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 500),
         height: style.activeIconMargin + style.activeIconSize,
         bottomChild: Container(
-          padding: EdgeInsets.only(bottom: 2),
+          padding: const EdgeInsets.only(bottom: 2),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: children,
           ),
         ),
-        topChild: Container(
-          child: Center(
-            child: BlendImageIcon(
-              item.icon,
-              color: item.blend ? color : null,
-              size: style.iconSize,
-            ),
+        topChild: Center(
+          child: BlendImageIcon(
+            item.icon,
+            color: item.blend ? color : null,
+            size: style.iconSize,
           ),
         ),
         curve: curve,
